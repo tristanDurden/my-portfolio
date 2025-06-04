@@ -33,12 +33,12 @@ export default function Contact() {
     try {
       const timestamp = new Date().toLocaleString();
       const message = `
-<b>New Contact Form Submission</b>
-Time: ${timestamp}
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company}
-Message: ${formData.message}
+        <b>New Contact Form Submission</b>
+        Time: ${timestamp}
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Company: ${formData.company}
+        Message: ${formData.message}
       `;
 
       await sendTelegramMessage(message);
@@ -58,19 +58,19 @@ Message: ${formData.message}
         <h2 className="text-3xl font-semibold mb-6 text-center">Get in Touch</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name" className="mb-2">Name</Label>
             <Input id="name" placeholder="Your name" value={formData.name} onChange={handleChange} />
           </div>
           <div>
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="mb-2">Email</Label>
             <Input id="email" type="email" placeholder="you@example.com" value={formData.email} onChange={handleChange} />
           </div>
           <div>
-            <Label htmlFor="company">Company</Label>
+            <Label htmlFor="company" className="mb-2">Company</Label>
             <Input id="company" placeholder="Company name" value={formData.company} onChange={handleChange} />
           </div>
           <div>
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message" className="mb-2">Message</Label>
             <Textarea id="message" placeholder="Your message" value={formData.message} onChange={handleChange} />
           </div>
           <Button type="submit" disabled={isLoading}>
